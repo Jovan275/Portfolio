@@ -1,0 +1,9 @@
+@import "../../Global.scss";
+.topbar {
+    width: 100%;
+    height: 70px;
+    background-color: $mainColor;
+    position: fixed; /*da topbar bude fiksno gore uvek cak i prilikom skrolovanja*/
+    top: 0; /*da topbar bude fiksno gore uvek cak i prilikom skrolovanja*/
+    z-index: 2; /*da topbar bude fiksno gore uvek cak i prilikom skrolovanja*/
+}

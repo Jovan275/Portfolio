@@ -1,0 +1,24 @@
+.app {
+    height: 100vh;
+
+    .sections {
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: lightsalmon;
+        position: relative;
+        top: 70px;
+        scroll-snap-type: y mandatory; /*da kad skrolujemo izmedju sekcija i da ako stanemo izmedju neke dve 
+        sekcije da nas onda prebaci na onu u kojoj smo vise usli*/
+        scrollbar-width: none; //za firefox da se ne vidi scrollbar
+        &::-webkit-scrollbar { //za chrome,edge i ostale pregledace
+            display: none;
+        }
+
+        > *{ /*Ovo znaci za svaki elemenat unutar sekcije, a unutra su Intro, portfolio, works...*/
+            width: 100vw;
+            height: calc(100vh - 70px);
+            scroll-snap-align: start; /*takodje sluzi za ono sto je definisano u sections ali ovo nas vraca na
+            startnu poziciju te neke sekcije u kojoj smo*/
+        }
+    }
+}
