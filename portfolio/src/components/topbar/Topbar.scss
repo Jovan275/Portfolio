@@ -2,8 +2,92 @@
 .topbar {
     width: 100%;
     height: 70px;
-    background-color: $mainColor;
+    background-color: white;
+    color: $mainColor; /*boja teksta ce biti ove boje*/
     position: fixed; /*da topbar bude fiksno gore uvek cak i prilikom skrolovanja*/
     top: 0; /*da topbar bude fiksno gore uvek cak i prilikom skrolovanja*/
-    z-index: 2; /*da topbar bude fiksno gore uvek cak i prilikom skrolovanja*/
+    z-index: 3; /*da topbar bude fiksno gore uvek cak i prilikom skrolovanja*/
+    transition: all 1s ease; /*da kada menjamo boju navbar-a da se ne menja brzo vec malo sporije*/
+
+
+.wrapper {
+    padding: 10px 30px;
+    display: flex; /*sta god da napisemo u navbar-u ono ce biti horizontalno zbog ovog flex*/
+    align-items: center;/* da centrira na sredini navbar-a*/
+    justify-content: space-between; /*ovo ce razdvojiti levu i desnu stranu*/
+
+    .left {
+
+        display: flex; /*Da mejl i broj telefona budu pored naslova genius.*/
+        align-items: center;
+
+        .logo {
+            font-size: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            color: inherit; /*da uzme boju koju smo definisali tamo gore u topbar-u $mainColor*/
+            margin-right: 40px; /*da malo udalji mejl i broj telefona od teksta genius.*/
+        }
+
+        .item-container {
+            display: flex; /*malo ih podigne gore po sredini da budu*/
+            align-items: center; /*centrira tekst da bude na sredini po horizontali gledano*/
+            margin-left: 30px; /*da razdvoji broj telefona i mejl*/
+
+
+            .icon {
+                font-size: 18px; /*menjamo velicinu ikonica mejl i broj telefona*/
+                margin-right: 5px; /*da napravi razmak izmedju ikonica i teksta*/
+            }
+
+            span {
+                font-size: 15px; /*velicina slova kod broja telefona i mejla*/
+                font-weight: 500; /*da budu malo tanja slova i brojevi*/
+            }
+        }
+    }
+
+    .right {
+
+        .hamburger {
+            width: 32px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /*da te tri linije razdvoji da ne budu slepljene*/
+            cursor: pointer;
+
+            span {
+                width: 100%;
+                height: 3px;
+                background-color: $mainColor;
+                transform-origin: left; /*da se rotira od leve strane, a ne oko svog centra*/
+                transition: all 2s ease;
+            }
+        }
+    }
+}
+
+&.active { /*da menjamo boju navbar-a kada se klikne na hamburger meni*/
+    background-color: $mainColor;
+    color: white;
+
+    .hamburger {
+         
+        span {
+            &:first-child{ /* da prva linija bude bela*/
+                background-color: white;
+                transform: rotate(45deg); /*rotiramo da bismo dobili iks*/
+            }
+            &:nth-child(2){/*ovo znaci da drugu liniju uzima i nju necemo prikazati*/
+                opacity: 0;
+            }
+            &:last-child{ /*da poslednja linija bude bele boje*/
+                background-color: white;
+                transform: rotate(-45deg); /*da rotira u suprotnom smeru i dobicemo onda iks*/
+            }
+        }
+    }
+}
+
 }

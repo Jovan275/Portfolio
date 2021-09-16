@@ -7,6 +7,8 @@
         background-color: lightsalmon;
         position: relative;
         top: 70px;
+        scroll-behavior: smooth; /*Da kad kliknemo da nas vrati skroz gore na pocetak stranice da ne bude
+        brzo vec malo sporije*/
         scroll-snap-type: y mandatory; /*da kad skrolujemo izmedju sekcija i da ako stanemo izmedju neke dve 
         sekcije da nas onda prebaci na onu u kojoj smo vise usli*/
         scrollbar-width: none; //za firefox da se ne vidi scrollbar
