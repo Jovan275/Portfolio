@@ -1,3 +1,71 @@
+@import "../../Global.scss";
 .portfolio {
-    background-color: lightskyblue;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    ul {
+        margin: 10px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        
+    }
+
+    .container {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /*ako te slike ne mogu sve u jednom redu da stanu u taj konejner onda ce neke preci 
+        u sledeci red*/
+
+
+        .item {
+
+            width: 220px;
+            height: 150px;
+            border-radius: 20px;
+            border: 1px solid rgb(243, 239, 239);
+            margin: 10px 20px; /*margina gornja i donja 10px, leva i desna 20px*/
+
+            display: flex;/*ove tri linije su za centriranje sadrzaja*/
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            position: relative; /*roditelj mora biti relative */
+            overflow: hidden; /*uklonimo scroll bar sa strane*/
+            transition: all 0.5s ease;
+            cursor: pointer;
+
+            h3 {
+                position: absolute; /*ako je ovo absolute onda roditelj mora biti relative*/
+                font-size: 20px;
+            }
+
+
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               z-index: 1; /*da h3 naslov bude iza slike*/
+            }
+
+            &:hover {
+                background-color: $mainColor;
+
+                img {
+                    opacity: 0.2; /*da slika ne nestane skroz vec da se malo vidi iza teksta koji ce je prekriti*/
+                    z-index: 0; /*kada predjemo misem preko onda ce se videti tekst*/
+                }
+            }
+        }
+    }
 }
