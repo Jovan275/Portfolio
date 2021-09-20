@@ -1,4 +1,7 @@
 @import "../../Global.scss";
+
+
+
 .menu {
     width: 300px;
     height: 100vh;
@@ -15,6 +18,10 @@
 
     &.active { /*ako je aktivan onda ce se videti meni*/
         right: 0;
+
+        @include mobile { /*da sirina menija bude preko celog ekrana */
+            width: 100%;
+        }
     }
 
     ul {

@@ -1,4 +1,7 @@
 @import "../../Global.scss";
+
+
+
 .portfolio {
     background-color: white;
     display: flex;
@@ -7,6 +10,10 @@
 
     h1 {
         font-size: 50px;
+
+        @include mobile {
+            font-size: 20px;
+        }
     }
 
     ul {
@@ -14,6 +21,12 @@
         padding: 0;
         list-style: none;
         display: flex;
+
+        @include mobile {
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px 0;
+        }
 
         
     }
@@ -25,6 +38,10 @@
         justify-content: center;
         flex-wrap: wrap; /*ako te slike ne mogu sve u jednom redu da stanu u taj konejner onda ce neke preci 
         u sledeci red*/
+
+        @include mobile {
+            width: 100%;
+        }
 
 
         .item {
@@ -44,6 +61,11 @@
             overflow: hidden; /*uklonimo scroll bar sa strane*/
             transition: all 0.5s ease;
             cursor: pointer;
+
+            @include mobile {
+                width: 130px;
+                height: 100px;
+            }
 
             h3 {
                 position: absolute; /*ako je ovo absolute onda roditelj mora biti relative*/

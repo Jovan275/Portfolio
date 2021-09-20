@@ -1,4 +1,6 @@
 @import "../../Global.scss";
+
+
 .topbar {
     width: 100%;
     height: 70px;
@@ -33,6 +35,10 @@
             display: flex; /*malo ih podigne gore po sredini da budu*/
             align-items: center; /*centrira tekst da bude na sredini po horizontali gledano*/
             margin-left: 30px; /*da razdvoji broj telefona i mejl*/
+
+            @include mobile {
+                display: none;
+            }
 
 
             .icon {

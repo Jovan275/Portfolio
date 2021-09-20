@@ -17,23 +17,28 @@ function Portfolio() {
     const list = [
         {
             id: "featured",
-            title: "Featured"
+            title: "Featured",
+            //key: "istaknut"
         },
         {
             id: "web",
-            title: "Web App"
+            title: "Web App",
+            //key: "veb"
         },
         {
             id: "mobile",
-            title: "Mobile App"
+            title: "Mobile App",
+            //key: "mobilni"
         },
         {
             id: "design",
-            title: "Design"
+            title: "Design",
+            //key: "dizajn"
         },
         {
             id: "content",
-            title: "Content"
+            title: "Content",
+            // key: "sadrzaj"
         }
     ]
 
